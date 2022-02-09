@@ -4,8 +4,9 @@ import Result from '../Result';
 
 function Game() {
 
-const initialState = ["","","","","","","","",""]
-
+const initialState = ["","","",
+                      "","","",
+                      "","",""];
 const [boardState, setBoardState] = useState(initialState);
 console.log(boardState);
 const [playerTurn, setPlayerTurn] = useState(true); 
