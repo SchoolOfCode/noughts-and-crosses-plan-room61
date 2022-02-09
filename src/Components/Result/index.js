@@ -1,8 +1,10 @@
 import React from 'react'
 
-function Result() {
+function Result({playerTurn}) {
   return (
-    <section>Result</section>
+    <section>
+      <h2>Turn: {playerTurn}</h2>
+    </section>
   )
 }
 

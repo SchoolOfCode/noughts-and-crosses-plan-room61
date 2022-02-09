@@ -5,7 +5,8 @@ import Result from '../Result';
 function Game() {
   return (
     <main>
-
+      <Result />
+      <Board />
     </main>
   )
 }
