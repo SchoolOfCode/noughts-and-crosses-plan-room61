@@ -1,9 +1,22 @@
 import React from 'react'
 import Square from '../Square'
 
-function Board() {
+function Board({playerTurn, boardState, changeSquare}) {
   return (
-    <section>Board</section>
+    <section>
+      {boardState.map( (element,index) => {
+        return(
+          <Square playerTurn={playerTurn} 
+                  changeSquare={changeSquare} 
+                  value={element} 
+                  index={index} 
+                  key={index} 
+
+          />
+        )
+      }
+      )}
+    </section>
   )
 }
 
