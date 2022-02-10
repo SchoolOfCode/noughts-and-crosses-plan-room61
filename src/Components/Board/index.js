@@ -6,7 +6,7 @@ function Board({playerTurn, boardState, changeSquare}) {
     <section>
       {boardState.map( (element,index) => {
         return(
-          <Square playerTurn={playerTurn} 
+          <Square  
                   changeSquare={changeSquare} 
                   value={element} 
                   index={index} 

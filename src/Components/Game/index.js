@@ -10,26 +10,23 @@ const initialState = [null,null,null,
                       null,null,null];
 const [boardState, setBoardState] = useState(initialState);
 console.log(boardState);
-const [playerTurn, setPlayerTurn] = useState(true);
-const [winner, setWinner] = useState(null); 
-console.log(winner);
+const [playerTurn, setPlayerTurn] = useState("X");
+let winner = checkWinning(boardState); 
 
-function changeSquare(index,value) {
-  if(winner || boardState[index]){
+function changeSquare(index) {
+
+  if( winner || boardState[index]){
     return;
   }
-  let playerMark = value? "X" : "O"; 
-  setWinner(checkWinning(boardState));
-  setBoardState([...boardState.slice(0,index), playerMark, ...boardState.slice(index + 1)]);
-  setWinner(checkWinning(boardState));
-  setPlayerTurn(!playerTurn);
-  
+  setBoardState([...boardState.slice(0,index), playerTurn, ...boardState.slice(index + 1)]);
+  console.log(boardState);
+  setPlayerTurn(playerTurn === "X"? "O": "X");
 }
 
   return (
     <main>
       <Result winner={winner} playerTurn={playerTurn}/>
-      <Board playerTurn= {playerTurn} changeSquare={changeSquare} boardState={boardState}/>
+      <Board changeSquare={changeSquare} boardState={boardState}/>
     </main>
   )
 }

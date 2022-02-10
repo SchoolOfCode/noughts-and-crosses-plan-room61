@@ -1,9 +1,9 @@
-import React,{useState} from 'react';
+import React from 'react';
 
-function Square({changeSquare, value, playerTurn,  index}) {
+function Square({changeSquare, value, index}) {
 
   return (
-    <button onClick={() => {changeSquare(index,playerTurn)} }>{value}</button>
+    <button onClick={() => {changeSquare(index)} }>{value}</button>
   )
 }
 

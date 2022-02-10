@@ -3,16 +3,15 @@
 
     for(let i = 0; i < indexArray.length; i++){
       const [a , b , c] = indexArray[i];    
-      if (squares[a]) {
-        console.log(squares[a] + squares[b] + squares[c]);
-        if(squares[a] === squares[b] && squares[a] === squares[c]) {
-          console.log("we have a winner");
+     // if (squares[a]) {
+        //console.log(squares[a] + squares[b] + squares[c]);
+        if(squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+          //console.log("we have a winner");
           return squares[a];
         }
-      }
-    
-      return false;
+       //return false;  
     } 
+    return false;
   }  
  
 /*
